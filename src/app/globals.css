@@ -243,4 +243,122 @@ a {
     max-width: 100vw !important;
     box-sizing: border-box !important;
   }
+
+  /* Mobile Text Sizing */
+  body {
+    font-size: 14px !important;
+  }
+
+  /* Hero Text */
+  [class*="hero"] h1,
+  [class*="Hero"] h1,
+  [class*="title"] {
+    font-size: clamp(1.8rem, 8vw, 3rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  [class*="subtitle"],
+  [class*="Subtitle"] {
+    font-size: 0.7rem !important;
+    letter-spacing: 0.1rem !important;
+  }
+
+  /* About Section Text */
+  [class*="about"] h2,
+  [class*="About"] h2 {
+    font-size: 1.8rem !important;
+  }
+
+  [class*="about"] h3,
+  [class*="About"] h3 {
+    font-size: 1.5rem !important;
+  }
+
+  [class*="about"] p,
+  [class*="About"] p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Gallery Text */
+  [class*="gallery"] h2,
+  [class*="Gallery"] h2 {
+    font-size: 2rem !important;
+  }
+
+  /* General Headings */
+  h1 {
+    font-size: 1.8rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  h3 {
+    font-size: 1.3rem !important;
+  }
+
+  h4 {
+    font-size: 1.1rem !important;
+  }
+
+  h5 {
+    font-size: 1rem !important;
+  }
+
+  h6 {
+    font-size: 0.9rem !important;
+  }
+
+  /* Paragraphs */
+  p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Links and Buttons Text */
+  a,
+  button {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Extra Small Devices - Even Smaller Text */
+@media (max-width: 480px) {
+  body {
+    font-size: 13px !important;
+  }
+
+  [class*="hero"] h1,
+  [class*="Hero"] h1,
+  [class*="title"] {
+    font-size: clamp(1.5rem, 7vw, 2.5rem) !important;
+  }
+
+  [class*="subtitle"],
+  [class*="Subtitle"] {
+    font-size: 0.65rem !important;
+  }
+
+  h1 {
+    font-size: 1.5rem !important;
+  }
+
+  h2 {
+    font-size: 1.3rem !important;
+  }
+
+  h3 {
+    font-size: 1.1rem !important;
+  }
+
+  p {
+    font-size: 0.9rem !important;
+  }
+
+  a,
+  button {
+    font-size: 0.8rem !important;
+  }
 }
