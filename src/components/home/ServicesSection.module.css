@@ -1,0 +1,51 @@
+.services {
+    padding: 6rem 10%;
+    background: linear-gradient(to top, #0f0f0f, #050505);
+}
+
+.container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.serviceBox {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid transparent;
+}
+
+.serviceBox:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.03);
+    border-color: var(--glass-border);
+}
+
+.serviceBox i {
+    display: block;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-style: normal;
+    /* If using emojis or text, gradient text clip handles color */
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.serviceBox h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.serviceBox p {
+    color: #aaa;
+    font-size: 1rem;
+}

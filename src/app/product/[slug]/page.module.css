@@ -1,0 +1,139 @@
+.container {
+    padding: 120px 10% 6rem;
+    min-height: 100vh;
+    background: var(--bg-color);
+}
+
+.notFound {
+    padding-top: 150px;
+    text-align: center;
+    min-height: 50vh;
+}
+
+.notFound h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.notFound a,
+.backLink {
+    color: #aaa;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.notFound a:hover,
+.backLink:hover {
+    color: var(--primary-color);
+}
+
+.backLink {
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.productWrapper {
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.imageSection {
+    flex: 1;
+    min-width: 300px;
+}
+
+.imageContainer {
+    border: 1px solid var(--glass-border);
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.imageContainer img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.infoSection {
+    flex: 1;
+    min-width: 300px;
+}
+
+.infoSection h1 {
+    font-size: 3rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.category {
+    color: #aaa;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.price {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.description {
+    color: #ddd;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.description p {
+    margin-bottom: 1rem;
+}
+
+.addToCartBtn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-gradient);
+    border: none;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    margin-bottom: 3rem;
+}
+
+.addToCartBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.details {
+    border-top: 1px solid var(--glass-border);
+    padding-top: 2rem;
+}
+
+.details p {
+    color: #aaa;
+    margin-bottom: 0.5rem;
+}
+
+.details strong {
+    color: #fff;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .productWrapper {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

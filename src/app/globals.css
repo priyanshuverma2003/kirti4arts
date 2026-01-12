@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Ultra Luxury Palette - Royal Blue & Metallic Gold */
+  --bg-color: #050814;
+  /* Darker, richer navy */
+  --bg-secondary: #0f172a;
+  /* Deep slate blue */
+
+  /* Luxury Metallic Gold Palette (White Gold / Champagne) */
+  --primary-color: #d4c4a8;
+  /* Champagne Gold (Cooler) */
+  --accent-gold: #c5a059;
+  /* Muted Bronze */
+
+  --gold-highlight: #fff8e7;
+  /* Cosmic Latte / White Gold */
+  --gold-shadow: #8f6b29;
+  /* Deep Bronze */
+
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  /* Cool silver-grey */
+
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  /* Much lighter, glassier */
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  /* Gradients */
+  --royal-gradient: radial-gradient(circle at top, #0f172a 0%, #050814 100%);
+
+  /* The "Ultra Luxury" Platinum/Gold Gradient */
+  --gold-gradient-rich: linear-gradient(to right, #bf9e60, #fff8e7, #b38f4d, #fbf5b7, #8f6b29);
+
+  /* Primary Gradient with Transparency */
+  --primary-gradient: linear-gradient(135deg, rgba(191, 158, 96, 0.2) 0%, rgba(255, 248, 231, 0.4) 50%, rgba(179, 143, 77, 0.2) 100%);
+  --gold-solid-gradient: linear-gradient(135deg, #bf9e60 0%, #fff8e7 50%, #b38f4d 100%);
+
+  --gold-text-gradient: linear-gradient(to bottom, #fff8e7 40%, #bf9e60 100%);
+  --gold-border-gradient: linear-gradient(45deg, rgba(191, 158, 96, 0.3), rgba(255, 248, 231, 0.6), rgba(143, 107, 41, 0.3));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none;
+  /* Hide default cursor for custom one */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  cursor: none;
+}
+
+/* Custom Scrollbar - Gold */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--accent-gold), var(--accent-gold-dark));
+  border-radius: 5px;
+  border: 2px solid var(--bg-color);
+}
+
+/* Utility Classes */
+.gold-text {
+  background: var(--gold-text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}

@@ -1,0 +1,160 @@
+.pageContainer {
+    padding: 120px 10% 6rem;
+    min-height: 100vh;
+    background: var(--bg-color);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.header h2 {
+    font-size: 3rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: #aaa;
+    font-size: 1.1rem;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    flex-wrap: wrap;
+}
+
+.info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.infoItem {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.infoItem:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-5px);
+}
+
+.infoItem h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.infoItem a,
+.infoItem p {
+    color: #ddd;
+    font-size: 1rem;
+}
+
+.infoItem a:hover {
+    color: #fff;
+}
+
+.formContainer {
+    flex: 1.5;
+    min-width: 300px;
+}
+
+.form {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 4px;
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
+    font-family: 'Lato', sans-serif;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.formGroup textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-gradient);
+    border: none;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 1px;
+}
+
+.submitBtn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .pageContainer {
+        padding: 100px 5% 4rem;
+    }
+
+    .content {
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header h2 {
+        font-size: 2.2rem;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .info,
+    .formContainer {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .form {
+        padding: 1.5rem;
+    }
+
+    .formGroup input,
+    .formGroup textarea {
+        font-size: 16px;
+        /* Prevents iOS auto-zoom on focus */
+    }
+}
