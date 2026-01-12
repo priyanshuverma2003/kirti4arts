@@ -23,6 +23,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "KirtiforArts | Ultra Luxury Art Gallery",
   description: "Discover exclusive originals, prints, and sketches by Kirti Verma.",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
 };
 
 export default function RootLayout({

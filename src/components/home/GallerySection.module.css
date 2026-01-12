@@ -98,6 +98,8 @@
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 40px;
     backdrop-filter: blur(10px);
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .filterBtn {
@@ -314,7 +316,7 @@
 
 @media (max-width: 768px) {
     .gallery {
-        padding: 5rem 5%;
+        padding: 3rem 5%;
     }
 
     .masonryGrid {

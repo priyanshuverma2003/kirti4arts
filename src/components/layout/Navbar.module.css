@@ -134,6 +134,21 @@
     transition: all 0.3s ease;
 }
 
+.mobileToggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.mobileToggle:hover {
+    color: var(--primary-color);
+}
+
+
 .searchBar.expanded .searchIcon {
     opacity: 1;
     transform: scale(1.1);
@@ -305,12 +320,14 @@
     }
 
     .desktopSearchContainer {
-        display: none;
+        display: block;
+        /* Removing the incorrect 'none' since we use searchContainer */
     }
 
     .mobileToggle {
         display: block;
     }
+
 
     .mobileSearchWrapper {
         display: block;

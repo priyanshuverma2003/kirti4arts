@@ -44,8 +44,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: none;
-  /* Hide default cursor for custom one */
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Custom cursor only on desktop */
+@media (min-width: 769px) {
+  * {
+    cursor: none;
+  }
+
+  a {
+    cursor: none;
+  }
 }
 
 body {
@@ -53,6 +67,9 @@ body {
   color: var(--text-primary);
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
 }
 
 h1,
@@ -70,7 +87,6 @@ a {
   text-decoration: none;
   color: inherit;
   transition: all 0.3s ease;
-  cursor: none;
 }
 
 /* Custom Scrollbar - Gold */
@@ -101,5 +117,130 @@ a {
 @keyframes shine {
   to {
     background-position: 200% center;
+  }
+}
+
+/* Comprehensive Mobile Fixes */
+@media (max-width: 768px) {
+  * {
+    max-width: 100vw;
+  }
+
+  body,
+  html {
+    overflow-x: hidden !important;
+  }
+
+  /* Override any min-widths that might cause overflow */
+  .col,
+  [class*="col"],
+  [class*="info"],
+  [class*="form"],
+  [class*="container"] {
+    min-width: 0 !important;
+  }
+
+  /* Ensure all containers are responsive */
+  div,
+  section,
+  main,
+  article {
+    max-width: 100%;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.8rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  h3 {
+    font-size: 1.3rem !important;
+  }
+}
+
+/* Mobile Utility Classes */
+.mobile-hidden {
+  display: none !important;
+}
+
+.mobile-visible {
+  display: block !important;
+}
+
+@media (min-width: 769px) {
+  .desktop-hidden {
+    display: none !important;
+  }
+
+  .mobile-hidden {
+    display: block !important;
+  }
+
+  .mobile-visible {
+    display: none !important;
+  }
+}
+
+/* Aggressive Mobile Resets - Ensure Everything Fits */
+@media (max-width: 768px) {
+
+  /* Force all images to be responsive */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Force all text containers to wrap */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  div {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Reduce all large padding/margins */
+  section,
+  main,
+  article {
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+
+  /* Make all buttons mobile-friendly */
+  button,
+  .btn,
+  [class*="button"],
+  [class*="Button"] {
+    min-width: 0 !important;
+    padding: 0.8rem 1.5rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Force flex containers to wrap */
+  [class*="flex"],
+  [class*="Flex"] {
+    flex-wrap: wrap !important;
+  }
+
+  /* Ensure no element is wider than viewport */
+  * {
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
   }
 }

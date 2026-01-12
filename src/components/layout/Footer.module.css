@@ -57,7 +57,16 @@
 }
 
 @media (max-width: 768px) {
+    .footer {
+        padding: 3rem 5% 2rem;
+    }
+
     .content {
         flex-direction: column;
+    }
+
+    .col {
+        min-width: 0;
+        width: 100%;
     }
 }
