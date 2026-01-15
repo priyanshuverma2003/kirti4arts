@@ -41,7 +41,7 @@ const slides = [
     },
     {
         id: 6,
-        image: '/van-sunset-gouache.png',
+        image: '/van-sunset-cropped.png',
         title: 'Van Life Sunset',
         subtitle: 'Bohemian Dreams'
     }
