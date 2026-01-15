@@ -319,9 +319,21 @@
         padding: 3rem 5%;
     }
 
+    .header {
+        margin-bottom: 2rem;
+        /* Reduced from 6rem */
+    }
+
+    .controlBar {
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
     .masonryGrid {
         column-count: 1;
         gap: 1.5rem;
+        padding: 1rem 0;
+        /* Reduced from 4rem */
     }
 
     .gridItem {
