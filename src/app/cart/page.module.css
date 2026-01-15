@@ -217,7 +217,11 @@
 /* Mobile Optimization - Tablet */
 @media (max-width: 768px) {
     .container {
-        padding: 120px 5% 4rem;
+        padding: 80px 5% 3rem;
+    }
+
+    .header {
+        margin-bottom: 1.5rem;
     }
 
     .header h2 {
@@ -227,7 +231,7 @@
     .cartGrid {
         display: flex;
         flex-direction: column;
-        gap: 3rem;
+        gap: 1.5rem;
     }
 
     .cartItems,
@@ -386,7 +390,7 @@
 /* Mobile Optimization - Phone */
 @media (max-width: 600px) {
     .container {
-        padding: 100px 4% 3rem;
+        padding: 70px 4% 2rem;
     }
 
     .cartItem {

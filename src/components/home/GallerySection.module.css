@@ -37,7 +37,7 @@
     font-size: 1.1rem;
     color: var(--text-secondary);
     max-width: 600px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 1.5rem;
     font-weight: 300;
     letter-spacing: 0.08em;
     font-style: italic;
@@ -317,17 +317,22 @@
 
 @media (max-width: 768px) {
     .gallery {
-        padding: 3rem 5%;
+        padding: 1rem 4%;
     }
 
     .header {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0rem;
         /* Aggressively reduced */
     }
 
     .controlBar {
-        gap: 0.8rem;
-        margin-top: 1rem;
+        gap: 0rem;
+        margin-top: 0rem;
+    }
+
+    .subtitle {
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
     }
 
     .filters {
@@ -362,8 +367,8 @@
     .masonryGrid {
         column-count: 1;
         gap: 1.5rem;
-        padding: 0 0 2rem 0;
-        /* Removed top padding */
+        padding: 0;
+        /* Removed all padding */
     }
 }
 

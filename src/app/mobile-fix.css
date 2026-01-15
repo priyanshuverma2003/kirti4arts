@@ -36,14 +36,24 @@
     [class*="about"],
     [class*="About"] {
         width: 100% !important;
-        padding: 2rem 5% !important;
+        padding: 1rem 5% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
     }
 
     /* Gallery Fixes */
     [class*="gallery"],
     [class*="Gallery"] {
         width: 100% !important;
-        padding: 2rem 5% !important;
+        padding: 1rem 5% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    [class*="header"],
+    [class*="Header"] {
+        margin-bottom: 0.3rem !important;
+        margin-top: 0 !important;
     }
 
     /* Image Fixes */

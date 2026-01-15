@@ -30,35 +30,44 @@ export default function AdminOrdersPage() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [password, setPassword] = useState('');
     const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
-
-    const checkPassword = (e: React.FormEvent) => {
-        e.preventDefault();
-        // In a real app, this would be a proper session/JWT
-        // For simplicity, we use a simple client-side check linked to a placeholder or env variable
-        if (password === 'admin952') { // Simple placeholder password
-            setIsAuthenticated(true);
-        } else {
-            alert('Invalid Password');
-        }
-    };
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        if (isAuthenticated) {
-            fetchOrders();
-        }
-    }, [isAuthenticated]);
+        setMounted(true);
+    }, []);
 
     const fetchOrders = async () => {
         try {
             const res = await fetch('/api/orders');
             const data = await res.json();
-            setOrders(data);
+            if (Array.isArray(data)) {
+                setOrders(data);
+            } else {
+                setOrders([]);
+            }
         } catch (error) {
             console.error('Failed to fetch orders');
         } finally {
             setIsLoading(false);
         }
     };
+
+    useEffect(() => {
+        if (isAuthenticated && mounted) {
+            fetchOrders();
+        }
+    }, [isAuthenticated, mounted]);
+
+    const checkPassword = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (password === 'admin952') {
+            setIsAuthenticated(true);
+        } else {
+            alert('Invalid Password');
+        }
+    };
+
+    if (!mounted) return null;
 
     const updateStatus = async (id: string, newStatus: string) => {
         try {
