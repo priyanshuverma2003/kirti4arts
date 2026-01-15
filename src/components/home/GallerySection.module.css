@@ -321,7 +321,16 @@
 
     .masonryGrid {
         column-count: 1;
-        gap: 2rem;
+        gap: 1.5rem;
+    }
+
+    .gridItem {
+        margin-bottom: 2rem;
+    }
+
+    .card {
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
     .header h2 {
