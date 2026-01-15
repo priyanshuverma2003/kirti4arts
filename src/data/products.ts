@@ -1,12 +1,5 @@
 export const products = [
-    {
-        id: 'moonlit-dreams',
-        title: 'Moonlit Dreams',
-        category: 'Gouache on Canvas',
-        image: '/moonlit-dreams.png',
-        price: 15000,
-        description: 'A serene and ethereal landscape capturing the quiet beauty of a moonlit night. This piece uses soft gouache layers to create a sense of depth and tranquility.',
-    },
+
     {
         id: 'silent-gaze',
         title: 'Silent Gaze',

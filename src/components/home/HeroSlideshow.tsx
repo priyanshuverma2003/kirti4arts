@@ -6,12 +6,7 @@ import Link from 'next/link';
 import styles from './HeroSlideshow.module.css';
 
 const slides = [
-    {
-        id: 1,
-        image: '/moonlit-dreams.png',
-        title: 'Moonlit Dreams',
-        subtitle: 'Gouache on Canvas'
-    },
+
     {
         id: 2,
         image: '/cosmic-dream.png',
