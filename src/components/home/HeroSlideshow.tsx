@@ -10,6 +10,24 @@ const slides = [
 
 
     {
+        id: 1,
+        image: '/royal-betta.jpg',
+        title: 'Royal Betta',
+        subtitle: 'Fluid Elegance'
+    },
+    {
+        id: 2,
+        image: '/showcase-piece.png',
+        title: 'The Masterpiece',
+        subtitle: 'Curated Perfection'
+    },
+    {
+        id: 3,
+        image: '/quiet-afternoon.jpg',
+        title: 'Quiet Afternoon',
+        subtitle: 'Serene Moments'
+    },
+    {
         id: 4,
         image: '/silent-gaze.png',
         title: 'Silent Gaze',
