@@ -25,14 +25,7 @@ export const products = [
         price: 4500,
         description: 'High quality print of the original Moon Boy artwork. Whimsical and charming character study.',
     },
-    {
-        id: 'golden-forest',
-        title: 'Golden Forest',
-        category: 'Sketch on Paper',
-        image: '/golden-forest.png',
-        price: 30000,
-        description: 'A majestic forest scene bathed in golden sunlight. Rich textures and warm tones.',
-    },
+
     {
         id: 'golden-oriole',
         title: 'Golden Oriole',

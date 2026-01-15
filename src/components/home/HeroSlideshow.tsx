@@ -8,12 +8,7 @@ import styles from './HeroSlideshow.module.css';
 const slides = [
 
 
-    {
-        id: 3,
-        image: '/golden-forest.png',
-        title: 'Golden Forest',
-        subtitle: 'Sketch on Paper'
-    },
+
     {
         id: 4,
         image: '/silent-gaze.png',
