@@ -14,7 +14,24 @@ export async function POST(request: Request) {
             );
         }
 
-        await connectToDatabase();
+        // Check if MONGODB_URI is available
+        if (!process.env.MONGODB_URI) {
+            console.error('ERROR: MONGODB_URI is not defined in environment variables.');
+            return NextResponse.json(
+                { error: 'Database configuration missing. Please set MONGODB_URI in Vercel.' },
+                { status: 500 }
+            );
+        }
+
+        try {
+            await connectToDatabase();
+        } catch (dbError) {
+            console.error('Database connection error:', dbError);
+            return NextResponse.json(
+                { error: 'Failed to connect to database. Please check Atlas IP whitelisting.' },
+                { status: 500 }
+            );
+        }
 
         const newOrder = await Order.create({
             customer: body.customer,
@@ -33,7 +50,7 @@ export async function POST(request: Request) {
     } catch (error) {
         console.error('Order creation error:', error);
         return NextResponse.json(
-            { error: 'Failed to place order' },
+            { error: error instanceof Error ? error.message : 'Failed to place order' },
             { status: 500 }
         );
     }

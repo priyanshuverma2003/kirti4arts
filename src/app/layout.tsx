@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Montserrat } from "next/font/google"; // Updated Fonts
 import "./globals.css";
+import "./mobile-fix.css";
 import { CartProvider } from "@/context/CartContext";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -23,7 +24,12 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "KirtiforArts | Ultra Luxury Art Gallery",
   description: "Discover exclusive originals, prints, and sketches by Kirti Verma.",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
