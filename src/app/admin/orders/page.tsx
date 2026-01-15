@@ -118,7 +118,10 @@ export default function AdminOrdersPage() {
                             <div key={order._id} className={styles.orderCard}>
                                 <div className={styles.customerInfo}>
                                     <h3>{order.customer.name}</h3>
-                                    <p><Clock size={14} /> {new Date(order.createdAt).toLocaleDateString()}</p>
+                                    <p>
+                                        <Clock size={14} />
+                                        {typeof window !== 'undefined' ? new Date(order.createdAt).toLocaleDateString() : ''}
+                                    </p>
                                 </div>
                                 <div className={styles.orderMeta}>
                                     <div className={styles.amount}>₹{order.totalAmount.toLocaleString()}</div>

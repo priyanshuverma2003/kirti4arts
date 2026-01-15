@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useCart } from '@/context/CartContext';
 import { useRouter } from 'next/navigation';
 import styles from './page.module.css';
@@ -18,9 +18,16 @@ export default function CheckoutPage() {
         city: '',
         zipCode: ''
     });
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) return null;
 
     if (cart.length === 0) {
-        if (typeof window !== 'undefined') router.push('/cart');
+        router.push('/cart');
         return null;
     }
 
