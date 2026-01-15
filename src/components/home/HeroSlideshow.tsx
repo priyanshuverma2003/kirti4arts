@@ -32,6 +32,18 @@ const slides = [
         image: '/silent-gaze.png',
         title: 'Silent Gaze',
         subtitle: 'Contemporary Portrait'
+    },
+    {
+        id: 5,
+        image: '/artistic-eye-gouache.png',
+        title: 'The Artistic Eye',
+        subtitle: 'Visionary Perspectives'
+    },
+    {
+        id: 6,
+        image: '/van-sunset-gouache.png',
+        title: 'Van Life Sunset',
+        subtitle: 'Bohemian Dreams'
     }
 ];
 
@@ -51,9 +63,9 @@ export default function HeroSlideshow() {
                 <motion.div
                     key={current}
                     className={styles.slideBackground}
-                    initial={{ opacity: 0, scale: 1.2 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 1.1 }}
+                    initial={{ opacity: 0, scale: 1.3 }}
+                    animate={{ opacity: 1, scale: 1.1 }}
+                    exit={{ opacity: 0, scale: 1.2 }}
                     transition={{ duration: 2.5, ease: "linear" }}
                     style={{ backgroundImage: `url(${slides[current].image})` }}
                 >
