@@ -134,7 +134,7 @@
     background: none;
     border: none;
     color: #888;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     cursor: pointer;
     text-decoration: underline;
 }
@@ -266,6 +266,7 @@
         text-align: left;
     }
 
+    /* Mobile-Friendly Controls */
     .controls {
         grid-column: 1 / -1;
         display: flex;
@@ -273,23 +274,66 @@
         width: 100%;
         justify-content: space-between;
         align-items: center;
+        /* Critical for vertical alignment */
         margin-top: 1rem;
         padding-top: 1rem;
         border-top: 1px solid rgba(255, 255, 255, 0.05);
+        gap: 1rem;
+    }
+
+    .quantity {
+        justify-content: center;
+        padding: 0 5px;
+        /* Remove internal padding for cleaner height match */
+        gap: 10px;
+        height: 40px;
+        /* Enforce height */
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.05);
+        /* Background for whole box */
+        border-radius: 4px;
     }
 
     .quantity button {
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.05);
+        width: 30px;
+        /* Slightly smaller width inside box */
+        height: 100%;
+        /* Fill height */
+        font-size: 1.3rem;
+        background: none;
+        /* Transparent buttons inside the stained box */
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .quantity span {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .removeBtn {
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 0.8rem;
+        /* Keep user preference */
+        padding: 0 1.5rem;
+        /* Horizontal padding */
+        height: 40px;
+        /* Match quantity height */
+        display: flex;
+        align-items: center;
+        /* Vertical center text */
+        justify-content: center;
+        letter-spacing: 0.1em;
+        background: rgba(255, 68, 68, 0.1);
+        border: 1px solid rgba(255, 68, 68, 0.3);
         border-radius: 4px;
-        /* Make it clickable */
+        color: #ff8888;
+        text-decoration: none;
+        white-space: nowrap;
     }
 
     /* Summary - Static at Bottom */
@@ -379,16 +423,52 @@
     .controls {
         justify-content: space-between;
         gap: 1rem;
+        align-items: center;
+    }
+
+    .quantity {
+        justify-content: center;
+        padding: 0 5px;
+        gap: 10px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+    }
+
+    .quantity button {
+        width: 30px;
+        height: 100%;
+        font-size: 1.3rem;
+        background: none;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .quantity span {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .removeBtn {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        padding: 0 1.5rem;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         letter-spacing: 0.1em;
-        padding: 0.8rem 1.5rem;
         background: rgba(255, 68, 68, 0.1);
-        /* Subtle red tint */
-        border-color: rgba(255, 68, 68, 0.3);
+        border: 1px solid rgba(255, 68, 68, 0.3);
+        border-radius: 4px;
         color: #ff8888;
+        text-decoration: none;
+        white-space: nowrap;
     }
 
     .summary {

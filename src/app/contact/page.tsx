@@ -21,10 +21,6 @@ export default function ContactPage() {
                         <a href="mailto:kirtiverma141@gmail.com">kirtiverma141@gmail.com</a>
                     </div>
                     <div className={styles.infoItem}>
-                        <h4>Phone</h4>
-                        <a href="tel:+918810426680">+91 8810426680</a>
-                    </div>
-                    <div className={styles.infoItem}>
                         <h4>Location</h4>
                         <p>New Delhi, India</p>
                     </div>
