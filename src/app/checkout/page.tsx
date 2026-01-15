@@ -8,189 +8,186 @@ import styles from './page.module.css';
 export default function CheckoutPage() {
     const { cart, cartTotal, clearCart } = useCart();
     const router = useRouter();
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState({
-        fullName: '',
+        name: '',
         email: '',
         phone: '',
         address: '',
         city: '',
-        pincode: '',
-        paymentMethod: 'upi'
+        zipCode: ''
     });
-    const [loading, setLoading] = useState(false);
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
+    if (cart.length === 0) {
+        if (typeof window !== 'undefined') router.push('/cart');
+        return null;
+    }
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setLoading(true);
+        setIsSubmitting(true);
 
-        // Simulate processing (In a real app, send to backend)
-        setTimeout(() => {
-            clearCart();
-            // For now, we just redirect
-            router.push('/order-success');
-        }, 1500);
+        try {
+            const orderData = {
+                customer: formData,
+                items: cart,
+                totalAmount: cartTotal,
+                paymentMethod: 'Direct Admin Payment'
+            };
+
+            const response = await fetch('/api/orders', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(orderData)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                clearCart();
+                router.push('/order-success');
+            } else {
+                alert(result.error || 'Failed to place order');
+            }
+        } catch (error) {
+            console.error('Checkout error:', error);
+            alert('Something went wrong. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
-
-    if (cart.length === 0) {
-        // Redirect if empty, or show message (better UX: redirect to cart or gallery)
-        // For now, showing a simple message
-        return (
-            <div className={styles.emptyContainer}>
-                <h2>Your cart is empty.</h2>
-                <button onClick={() => router.push('/gallery')} className={styles.backBtn}>Return to Gallery</button>
-            </div>
-        );
-    }
 
     return (
         <div className={styles.container}>
-            <h1 className={styles.pageTitle}>Secure Checkout</h1>
+            <h1 className={styles.title}>Secure Checkout</h1>
 
-            <div className={styles.layout}>
-                {/* Left Column: Shipping Form */}
+            <div className={styles.checkoutGrid}>
+                {/* Shipping Form */}
                 <div className={styles.formSection}>
                     <h2 className={styles.sectionTitle}>Shipping Details</h2>
-                    <form onSubmit={handleSubmit} className={styles.checkoutForm}>
+                    <form id="checkout-form" onSubmit={handleSubmit}>
                         <div className={styles.formGroup}>
                             <label>Full Name</label>
                             <input
                                 type="text"
-                                name="fullName"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
                                 required
-                                value={formData.fullName}
-                                onChange={handleInputChange}
                                 placeholder="Enter your full name"
                             />
                         </div>
 
-                        <div className={styles.row}>
-                            <div className={styles.formGroup}>
-                                <label>Email Address</label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    required
-                                    value={formData.email}
-                                    onChange={handleInputChange}
-                                    placeholder="your@email.com"
-                                />
-                            </div>
-                            <div className={styles.formGroup}>
-                                <label>Phone Number</label>
-                                <input
-                                    type="tel"
-                                    name="phone"
-                                    required
-                                    value={formData.phone}
-                                    onChange={handleInputChange}
-                                    placeholder="+91 98765 43210"
-                                />
-                            </div>
-                        </div>
-
                         <div className={styles.formGroup}>
-                            <label>Shipping Address</label>
-                            <textarea
-                                name="address"
+                            <label>Email Address</label>
+                            <input
+                                type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
                                 required
-                                value={formData.address}
-                                onChange={handleInputChange}
-                                placeholder="Flat / House No / Street Name"
-                                rows={3}
+                                placeholder="For order confirmation"
                             />
                         </div>
 
-                        <div className={styles.row}>
+                        <div className={styles.formGroup}>
+                            <label>Phone Number</label>
+                            <input
+                                type="tel"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                required
+                                placeholder="For delivery updates"
+                            />
+                        </div>
+
+                        <div className={styles.formGroup}>
+                            <label>Street Address</label>
+                            <input
+                                type="text"
+                                name="address"
+                                value={formData.address}
+                                onChange={handleChange}
+                                required
+                                placeholder="House no., Street, Area"
+                            />
+                        </div>
+
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                             <div className={styles.formGroup}>
                                 <label>City</label>
                                 <input
                                     type="text"
                                     name="city"
-                                    required
                                     value={formData.city}
-                                    onChange={handleInputChange}
-                                    placeholder="City Name"
+                                    onChange={handleChange}
+                                    required
                                 />
                             </div>
                             <div className={styles.formGroup}>
-                                <label>Pincode</label>
+                                <label>Zip Code</label>
                                 <input
                                     type="text"
-                                    name="pincode"
+                                    name="zipCode"
+                                    value={formData.zipCode}
+                                    onChange={handleChange}
                                     required
-                                    value={formData.pincode}
-                                    onChange={handleInputChange}
-                                    placeholder="000000"
                                 />
                             </div>
                         </div>
-
-                        <h2 className={styles.sectionTitle} style={{ marginTop: '2rem' }}>Payment Method</h2>
-                        <div className={styles.paymentMethods}>
-                            <label className={`${styles.paymentOption} ${formData.paymentMethod === 'upi' ? styles.selected : ''}`}>
-                                <input
-                                    type="radio"
-                                    name="paymentMethod"
-                                    value="upi"
-                                    checked={formData.paymentMethod === 'upi'}
-                                    onChange={handleInputChange}
-                                />
-                                <div className={styles.optionContent}>
-                                    <span className={styles.optionTitle}>UPI / QRCode</span>
-                                    <span className={styles.optionDesc}>Pay via GPay, PhonePe, Paytm</span>
-                                </div>
-                            </label>
-
-                            <label className={`${styles.paymentOption} ${formData.paymentMethod === 'bank' ? styles.selected : ''}`}>
-                                <input
-                                    type="radio"
-                                    name="paymentMethod"
-                                    value="bank"
-                                    checked={formData.paymentMethod === 'bank'}
-                                    onChange={handleInputChange}
-                                />
-                                <div className={styles.optionContent}>
-                                    <span className={styles.optionTitle}>Direct Bank Transfer</span>
-                                    <span className={styles.optionDesc}>Transfer directly to our bank account</span>
-                                </div>
-                            </label>
-                        </div>
-
-                        <button type="submit" className={styles.placeOrderBtn} disabled={loading}>
-                            {loading ? 'Processing...' : `Place Order - ₹${cartTotal.toLocaleString()}`}
-                        </button>
                     </form>
                 </div>
 
-                {/* Right Column: Order Summary */}
+                {/* Order Summary & Payment */}
                 <div className={styles.summarySection}>
                     <div className={styles.summaryCard}>
-                        <h3>Order Summary</h3>
-                        <div className={styles.cartItems}>
-                            {cart.map(item => (
-                                <div key={item.id} className={styles.miniItem}>
-                                    <img src={item.image} alt={item.title} />
-                                    <div className={styles.miniDetails}>
-                                        <span>{item.title}</span>
-                                        <small>Qty: {item.quantity}</small>
-                                    </div>
-                                    <span className={styles.miniPrice}>₹{(item.price * item.quantity).toLocaleString()}</span>
-                                </div>
-                            ))}
-                        </div>
-                        <div className={styles.divider}></div>
+                        <h2 className={styles.sectionTitle}>Order Summary</h2>
+                        {cart.map((item) => (
+                            <div key={item.id} className={styles.summaryRow}>
+                                <span>{item.title} x {item.quantity}</span>
+                                <span>₹{(item.price * item.quantity).toLocaleString()}</span>
+                            </div>
+                        ))}
+
                         <div className={styles.totalRow}>
-                            <span>Total</span>
-                            <span className={styles.totalAmount}>₹{cartTotal.toLocaleString()}</span>
+                            <span>Total Amount</span>
+                            <span>₹{cartTotal.toLocaleString()}</span>
                         </div>
-                        <div className={styles.secureBadge}>
-                            🔒 AES-256 Encrypted Payment
+
+                        {/* Direct Payment Info */}
+                        <div className={styles.paymentMethods}>
+                            <h4>Payment Method</h4>
+                            <p style={{ fontSize: '0.9rem', color: '#ccc', marginBottom: '1rem' }}>
+                                Scan the QR code or use the UPI ID below to complete your payment.
+                            </p>
+
+                            <div className={styles.qrPlaceholder}>
+                                QR CODE
+                            </div>
+
+                            <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                                <p style={{ color: '#d4af37', fontWeight: 'bold' }}>UPI: kirti4arts@upi</p>
+                                <p style={{ fontSize: '0.8rem', color: '#888' }}>(Example Handle)</p>
+                            </div>
+
+                            <p style={{ fontSize: '0.8rem', color: '#888', textAlign: 'center' }}>
+                                * Please confirm your order after payment.
+                            </p>
                         </div>
+
+                        <button
+                            type="submit"
+                            form="checkout-form"
+                            className={styles.placeOrderBtn}
+                            disabled={isSubmitting}
+                        >
+                            {isSubmitting ? 'Processing...' : 'Place Order'}
+                        </button>
                     </div>
                 </div>
             </div>
