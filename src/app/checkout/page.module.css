@@ -89,28 +89,138 @@
 
 .paymentMethods {
     margin-top: 2rem;
-    padding: 1.5rem;
-    background: rgba(212, 175, 55, 0.05);
-    border-radius: 8px;
+    padding: 2rem;
+    background: linear-gradient(145deg, rgba(20, 20, 30, 0.6), rgba(10, 10, 15, 0.8));
+    border-radius: 12px;
     border: 1px solid rgba(212, 175, 55, 0.2);
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .paymentMethods h4 {
     color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+}
+
+.paymentInstruction {
+    font-size: 0.9rem;
+    color: #aeaeae;
+    margin-bottom: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.paymentInstruction strong {
+    color: #fff;
+}
+
+.qrContainer {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1.5rem;
+    padding: 10px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+.qrImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.scanBorder {
+    position: absolute;
+    inset: -5px;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    background: linear-gradient(45deg, var(--primary-color), transparent, var(--primary-color)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.6;
+    animation: borderSpin 4s linear infinite;
+}
+
+@keyframes borderSpin {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.upiDetails {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 1rem;
 }
 
-.qrPlaceholder {
-    width: 150px;
-    height: 150px;
-    background: #fff;
-    margin: 1rem auto;
+.upiLabel {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+    margin-bottom: 0.3rem;
+}
+
+.upiValue {
+    font-size: 1rem;
+    color: #fff;
+    font-family: monospace;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.copyBtn {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--primary-color);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.copyBtn:hover {
+    background: var(--primary-color);
     color: #000;
-    font-weight: bold;
-    border-radius: 8px;
+}
+
+.payLink {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px dashed var(--primary-color);
+    padding-bottom: 2px;
+    margin-bottom: 1rem;
+    transition: all 0.3s;
+}
+
+.payLink:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+.confirmNote {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 1rem;
+    font-style: italic;
 }
 
 .placeOrderBtn {

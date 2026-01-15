@@ -161,22 +161,37 @@ export default function CheckoutPage() {
 
                         {/* Direct Payment Info */}
                         <div className={styles.paymentMethods}>
-                            <h4>Payment Method</h4>
-                            <p style={{ fontSize: '0.9rem', color: '#ccc', marginBottom: '1rem' }}>
-                                Scan the QR code or use the UPI ID below to complete your payment.
+                            <h4>Secure Payment</h4>
+                            <p className={styles.paymentInstruction}>
+                                Scan with <strong>GPay</strong> or any UPI app to pay for your masterpiece.
                             </p>
 
-                            <div className={styles.qrPlaceholder}>
-                                QR CODE
+                            <div className={styles.qrContainer}>
+                                <img src="/payment-qr.jpg" alt="Payment QR Code" className={styles.qrImage} />
+                                <div className={styles.scanBorder} />
                             </div>
 
-                            <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
-                                <p style={{ color: '#d4af37', fontWeight: 'bold' }}>UPI: kirti4arts@upi</p>
-                                <p style={{ fontSize: '0.8rem', color: '#888' }}>(Example Handle)</p>
+                            <div className={styles.upiDetails}>
+                                <p className={styles.upiLabel}>UPI ID</p>
+                                <div className={styles.upiValue}>
+                                    priyanshuverma952@okicici
+                                    <button
+                                        type="button"
+                                        className={styles.copyBtn}
+                                        onClick={() => navigator.clipboard.writeText('priyanshuverma952@okicici')}
+                                    >
+                                        COPY
+                                    </button>
+                                </div>
                             </div>
 
-                            <p style={{ fontSize: '0.8rem', color: '#888', textAlign: 'center' }}>
-                                * Please confirm your order after payment.
+                            {/* Mobile only GPay intent */}
+                            <a href="upi://pay?pa=priyanshuverma952@okicici&pn=Kirti4Arts&cu=INR" className={styles.payLink}>
+                                Open GPay / UPI App
+                            </a>
+
+                            <p className={styles.confirmNote}>
+                                * After payment, please click "Place Order" below.
                             </p>
                         </div>
 
