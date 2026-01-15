@@ -1,5 +1,5 @@
 .container {
-    padding: 120px 10% 6rem;
+    padding: 160px 10% 6rem;
     min-height: 100vh;
     background: var(--bg-color);
 }
@@ -162,9 +162,16 @@
 .summaryRow {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 15px;
     margin-bottom: 1rem;
     font-size: 0.95rem;
     color: #ddd;
+}
+
+.summaryRow span:last-child {
+    text-align: right;
+    flex-shrink: 0;
 }
 
 .total {
@@ -199,6 +206,12 @@
     margin-top: 1rem;
     font-size: 0.8rem;
     color: #666;
+}
+
+.checkoutBtnLink {
+    text-decoration: none;
+    display: block;
+    width: 100%;
 }
 
 /* Mobile Optimization - Tablet */
