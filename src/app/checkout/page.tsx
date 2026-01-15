@@ -9,6 +9,7 @@ export default function CheckoutPage() {
     const { cart, cartTotal, clearCart } = useCart();
     const router = useRouter();
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -30,6 +31,7 @@ export default function CheckoutPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setErrorMessage('');
 
         try {
             const orderData = {
@@ -51,11 +53,11 @@ export default function CheckoutPage() {
                 clearCart();
                 router.push('/order-success');
             } else {
-                alert(result.error || 'Failed to place order');
+                setErrorMessage(result.error || 'Failed to place order. Please check your connection.');
             }
         } catch (error) {
             console.error('Checkout error:', error);
-            alert('Something went wrong. Please try again.');
+            setErrorMessage('Something went wrong. Please ensure you are connected to the internet.');
         } finally {
             setIsSubmitting(false);
         }
@@ -194,6 +196,12 @@ export default function CheckoutPage() {
                                 * After payment, please click "Place Order" below.
                             </p>
                         </div>
+
+                        {errorMessage && (
+                            <div style={{ padding: '10px', background: 'rgba(255,0,0,0.1)', border: '1px solid red', color: 'red', borderRadius: '4px', marginTop: '1rem', textAlign: 'center' }}>
+                                {errorMessage}
+                            </div>
+                        )}
 
                         <button
                             type="submit"
