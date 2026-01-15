@@ -17,9 +17,9 @@ const slides = [
     },
     {
         id: 2,
-        image: '/showcase-piece.png',
-        title: 'The Masterpiece',
-        subtitle: 'Curated Perfection'
+        image: '/silent-gaze.png',
+        title: 'Silent Gaze',
+        subtitle: 'Contemporary Portrait'
     },
     {
         id: 3,
@@ -39,12 +39,7 @@ const slides = [
         title: 'Serene Lake Sunset',
         subtitle: 'Nature\'s Gold'
     },
-    {
-        id: 6,
-        image: '/silent-gaze.png',
-        title: 'Silent Gaze',
-        subtitle: 'Contemporary Portrait'
-    }
+
 ];
 
 export default function HeroSlideshow() {
