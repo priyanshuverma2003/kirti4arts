@@ -11,39 +11,39 @@ const slides = [
 
     {
         id: 1,
-        image: '/showcase-piece.png',
-        title: 'The Masterpiece',
-        subtitle: 'Curated Perfection'
-    },
-    {
-        id: 2,
-        image: '/lake-sunset.jpg',
-        title: 'Serene Lake Sunset',
-        subtitle: 'Nature\'s Gold'
-    },
-    {
-        id: 3,
-        image: '/autumn-reading.jpg',
-        title: 'Autumn Comfort',
-        subtitle: 'Cozy Aesthetics'
-    },
-    {
-        id: 4,
-        image: '/silent-gaze.png',
-        title: 'Silent Gaze',
-        subtitle: 'Contemporary Portrait'
-    },
-    {
-        id: 5,
         image: '/artistic-eye-gouache.png',
         title: 'The Artistic Eye',
         subtitle: 'Visionary Perspectives'
     },
     {
-        id: 6,
-        image: '/van-sunset-cropped.png',
+        id: 2,
+        image: '/showcase-piece.png',
+        title: 'The Masterpiece',
+        subtitle: 'Curated Perfection'
+    },
+    {
+        id: 3,
+        image: '/van-sunset-gouache.png',
         title: 'Van Life Sunset',
         subtitle: 'Bohemian Dreams'
+    },
+    {
+        id: 4,
+        image: '/autumn-reading.jpg',
+        title: 'Autumn Comfort',
+        subtitle: 'Cozy Aesthetics'
+    },
+    {
+        id: 5,
+        image: '/lake-sunset.jpg',
+        title: 'Serene Lake Sunset',
+        subtitle: 'Nature\'s Gold'
+    },
+    {
+        id: 6,
+        image: '/silent-gaze.png',
+        title: 'Silent Gaze',
+        subtitle: 'Contemporary Portrait'
     }
 ];
 
