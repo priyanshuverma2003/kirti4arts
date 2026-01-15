@@ -16,14 +16,7 @@ export const products = [
         price: 8000,
         description: 'A blend of textures and colors creating an ethereal abstract experience. A journey through imagination.',
     },
-    {
-        id: 'cosmic-dream',
-        title: 'Cosmic Dream',
-        category: 'Sketch on Paper',
-        image: '/cosmic-dream.png',
-        price: 25000,
-        description: 'Vibrant oils bringing the cosmos to life on canvas. Swirling colors representing the vastness of the universe.',
-    },
+
     {
         id: 'moon-boy',
         title: 'Moon Boy',
@@ -88,22 +81,8 @@ export const products = [
         price: 26000,
         description: 'A boy looks to the heavens, equipped for a journey beyond. A testament to childhood wonder and the boundless sky.',
     },
-    {
-        id: 'majestic-peaks',
-        title: 'Majestic Peaks',
-        category: 'Gouache Print',
-        image: '/majestic-peaks.jpg',
-        price: 11500,
-        description: 'Towering mountains kissed by the morning light, standing guard over a lush forest. Nature\'s grandeur in gouache.',
-    },
-    {
-        id: 'desert-dream',
-        title: 'Desert Dream',
-        category: 'Original Gouache',
-        image: '/desert-dream.jpg',
-        price: 24000,
-        description: 'A surreal desert night where pyramids meet the cosmos. A traveler navigates the sands under a giant, mystical moon.',
-    },
+
+
     {
         id: 'sunflower-haze',
         title: 'Sunflower Haze',

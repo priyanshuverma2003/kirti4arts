@@ -7,12 +7,7 @@ import styles from './HeroSlideshow.module.css';
 
 const slides = [
 
-    {
-        id: 2,
-        image: '/cosmic-dream.png',
-        title: 'Cosmic Dream',
-        subtitle: 'Astral Sketch Composition'
-    },
+
     {
         id: 3,
         image: '/golden-forest.png',
