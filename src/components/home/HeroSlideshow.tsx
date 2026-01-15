@@ -11,21 +11,21 @@ const slides = [
 
     {
         id: 1,
-        image: '/royal-betta.jpg',
-        title: 'Royal Betta',
-        subtitle: 'Fluid Elegance'
-    },
-    {
-        id: 2,
         image: '/showcase-piece.png',
         title: 'The Masterpiece',
         subtitle: 'Curated Perfection'
     },
     {
+        id: 2,
+        image: '/lake-sunset.jpg',
+        title: 'Serene Lake Sunset',
+        subtitle: 'Nature\'s Gold'
+    },
+    {
         id: 3,
-        image: '/quiet-afternoon.jpg',
-        title: 'Quiet Afternoon',
-        subtitle: 'Serene Moments'
+        image: '/autumn-reading.jpg',
+        title: 'Autumn Comfort',
+        subtitle: 'Cozy Aesthetics'
     },
     {
         id: 4,
@@ -63,9 +63,9 @@ export default function HeroSlideshow() {
                 <motion.div
                     key={current}
                     className={styles.slideBackground}
-                    initial={{ opacity: 0, scale: 1.3 }}
-                    animate={{ opacity: 1, scale: 1.1 }}
-                    exit={{ opacity: 0, scale: 1.2 }}
+                    initial={{ opacity: 0, scale: 1.15 }}
+                    animate={{ opacity: 1, scale: 1.05 }}
+                    exit={{ opacity: 0, scale: 1.1 }}
                     transition={{ duration: 2.5, ease: "linear" }}
                     style={{ backgroundImage: `url(${slides[current].image})` }}
                 >
