@@ -34,17 +34,17 @@ export default function CartPage() {
                             <div className={styles.itemDetails}>
                                 <h3>{item.title}</h3>
                                 <p className={styles.price}>₹{item.price.toLocaleString()}</p>
+                            </div>
 
-                                <div className={styles.controls}>
-                                    <div className={styles.quantity}>
-                                        <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>
-                                        <span>{item.quantity}</span>
-                                        <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
-                                    </div>
-                                    <button className={styles.removeBtn} onClick={() => removeFromCart(item.id)}>
-                                        Remove
-                                    </button>
+                            <div className={styles.controls}>
+                                <div className={styles.quantity}>
+                                    <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>
+                                    <span>{item.quantity}</span>
+                                    <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
                                 </div>
+                                <button className={styles.removeBtn} onClick={() => removeFromCart(item.id)}>
+                                    REMOVE
+                                </button>
                             </div>
                         </div>
                     ))}
