@@ -32,6 +32,9 @@ export default function ContactPage() {
                             <input type="text" placeholder="Your Name" required />
                         </div>
                         <div className={styles.formGroup}>
+                            <input type="tel" placeholder="Your Phone Number" required />
+                        </div>
+                        <div className={styles.formGroup}>
                             <input type="email" placeholder="Your Email" required />
                         </div>
                         <div className={styles.formGroup}>
