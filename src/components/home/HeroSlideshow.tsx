@@ -13,31 +13,36 @@ const slides = [
         id: 1,
         image: '/artistic-eye-gouache.png',
         title: 'The Artistic Eye',
-        subtitle: 'Visionary Perspectives'
+        subtitle: 'Visionary Perspectives',
+        position: 'center'
     },
     {
         id: 2,
         image: '/silent-gaze.png',
         title: 'Silent Gaze',
-        subtitle: 'Contemporary Portrait'
+        subtitle: 'Contemporary Portrait',
+        position: 'center 20%'
     },
     {
         id: 3,
         image: '/van-sunset-gouache.png',
         title: 'Van Life Sunset',
-        subtitle: 'Bohemian Dreams'
+        subtitle: 'Bohemian Dreams',
+        position: 'center'
     },
     {
         id: 4,
         image: '/autumn-reading.jpg',
         title: 'Autumn Comfort',
-        subtitle: 'Cozy Aesthetics'
+        subtitle: 'Cozy Aesthetics',
+        position: 'center'
     },
     {
         id: 5,
         image: '/lake-sunset.jpg',
         title: 'Serene Lake Sunset',
-        subtitle: 'Nature\'s Gold'
+        subtitle: 'Nature\'s Gold',
+        position: 'center'
     },
 
 ];
@@ -62,7 +67,10 @@ export default function HeroSlideshow() {
                     animate={{ opacity: 1, scale: 1.05 }}
                     exit={{ opacity: 0, scale: 1.1 }}
                     transition={{ duration: 2.5, ease: "linear" }}
-                    style={{ backgroundImage: `url(${slides[current].image})` }}
+                    style={{
+                        backgroundImage: `url(${slides[current].image})`,
+                        backgroundPosition: (slides[current] as any).position || 'center'
+                    }}
                 >
                     <div className={styles.overlay} />
                     <div className={styles.vignette} />
