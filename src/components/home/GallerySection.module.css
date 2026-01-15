@@ -320,8 +320,8 @@
     }
 
     .header {
-        margin-bottom: 2rem;
-        /* Reduced from 6rem */
+        margin-bottom: 0.5rem;
+        /* Aggressively reduced */
     }
 
     .controlBar {
@@ -332,8 +332,8 @@
     .masonryGrid {
         column-count: 1;
         gap: 1.5rem;
-        padding: 1rem 0;
-        /* Reduced from 4rem */
+        padding: 0 0 2rem 0;
+        /* Removed top padding */
     }
 
     .gridItem {
