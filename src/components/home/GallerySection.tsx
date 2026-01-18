@@ -68,7 +68,6 @@ function ArtworkCard({ product, index }: { product: any; index: number }) {
                         <h3>{product.title}</h3>
                         <div className={styles.cardFooter}>
                             <span className={styles.price}>₹{product.price.toLocaleString()}</span>
-                            <div className={styles.divider} />
                         </div>
                     </div>
                 </motion.div>
