@@ -324,51 +324,60 @@
         margin-bottom: 2rem;
     }
 
-    .masonryGrid {
-        column-count: 2;
-        column-gap: 1rem;
-        padding: 1rem 0;
-    }
-
-    .gridItem {
-        margin-bottom: 1.5rem;
-    }
-
-    .cardInfo {
-        padding: 1rem 0.8rem;
-    }
-
-    .categoryLabel {
-        font-size: 0.6rem;
-        margin-bottom: 0.3rem;
-    }
-
-    .cardInfo h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .price {
-        font-size: 0.9rem;
-    }
-
-    .viewLabel {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.65rem;
-    }
-
-    .controlBar {
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-    }
-
+    /* Vertical Filters matching screenshot */
     .filters {
-        gap: 0.2rem;
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        background: rgba(15, 15, 25, 0.4);
+        border: 1px solid rgba(212, 175, 55, 0.1);
+        border-radius: 40px;
+        padding: 1.5rem 1rem;
+        gap: 0;
     }
 
     .filterBtn {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.65rem;
+        width: 100%;
+        padding: 1.2rem;
+        font-size: 0.9rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .filterBtn:last-child {
+        border-bottom: none;
+    }
+
+    .activeIndicator {
+        border-radius: 30px;
+        inset: 0.3rem;
+    }
+
+    /* Broader Pictures (1-column) */
+    .masonryGrid {
+        column-count: 1;
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+
+    .gridItem {
+        margin-bottom: 2.5rem;
+    }
+
+    .cardInfo {
+        padding: 2rem 1.5rem;
+    }
+
+    .cardInfo h3 {
+        font-size: 1.6rem;
+    }
+
+    .price {
+        font-size: 1.1rem;
+    }
+
+    .controlBar {
+        gap: 2rem;
+        margin-bottom: 3rem;
     }
 }
 

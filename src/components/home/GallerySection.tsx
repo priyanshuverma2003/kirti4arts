@@ -62,7 +62,6 @@ function ArtworkCard({ product, index }: { product: any; index: number }) {
                         <div className={styles.overlay}>
                             <span className={styles.viewLabel}>View Masterpiece</span>
                         </div>
-                        <div className={styles.shinyOverlay} />
                     </div>
                     <div className={styles.cardInfo} style={{ transform: "translateZ(50px)" }}>
                         <p className={styles.categoryLabel}>{product.category}</p>
