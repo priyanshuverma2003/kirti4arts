@@ -484,3 +484,78 @@
         font-size: 0.95rem;
     }
 }
+
+.processSection {
+    margin-top: 6rem;
+    padding-top: 4rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.processSection h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
+}
+
+.processSteps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+}
+
+.step {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.stepNumber {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(212, 175, 55, 0.1);
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.step h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.step p {
+    color: #aaa;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .processSection {
+        margin-top: 4rem;
+        padding-top: 2rem;
+    }
+
+    .processSection h3 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .processSteps {
+        gap: 1.5rem;
+    }
+
+    .step {
+        padding: 1.5rem;
+    }
+}
