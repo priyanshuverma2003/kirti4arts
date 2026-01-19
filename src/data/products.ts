@@ -31,23 +31,23 @@ export const products = [
         title: 'Golden Oriole',
         category: 'Original Gouache',
         image: '/golden-oriole.jpg',
-        price: 18000,
+        price: 2500,
         description: 'A vibrant study of the Golden Oriole, perched amidst nature\'s bounty. Capture the vivid plumage and lively spirit in gouache.',
     },
     {
         id: 'royal-kingfisher',
         title: 'Royal Kingfisher',
-        category: 'Original Gouache', // Matches Originals & Gouache
+        category: 'Original Gouache',
         image: '/kingfisher.jpg',
-        price: 22000,
+        price: 2900,
         description: 'The flash of blue! A stunning, high-detail gouache rendering of a Kingfisher in its moment of stillness.',
     },
     {
         id: 'mountain-retreat',
         title: 'Mountain Retreat',
-        category: 'Gouache Print', // Matches Prints & Gouache
+        category: 'Gouache Print',
         image: '/mountain-view.jpg',
-        price: 12000,
+        price: 1500,
         description: 'A serene view from the balcony, looking out over lush pines to the majestic peaks beyond. A cozy, atmospheric piece.',
     },
     {
@@ -55,7 +55,7 @@ export const products = [
         title: 'The Cosmic Sitter',
         category: 'Original Gouache',
         image: '/cosmic-sitter.jpg',
-        price: 28000,
+        price: 3500,
         description: 'A surreal journey: a lonely astronaut contemplating the universe from atop a ringed canvas. Deep space blacks meet vibrant planetary hues.',
     },
     {
@@ -63,7 +63,7 @@ export const products = [
         title: 'Twilight Companion',
         category: 'Gouache Print',
         image: '/purple-sunset.jpg',
-        price: 9500,
+        price: 1300,
         description: 'Quiet moments shared with a loyal friend against a backdrop of a vivid purple twilight. A heartwarming scene of peace.',
     },
     {
@@ -71,17 +71,15 @@ export const products = [
         title: 'The Star Gazer',
         category: 'Original Gouache',
         image: '/star-gazer.jpg',
-        price: 26000,
+        price: 3300,
         description: 'A boy looks to the heavens, equipped for a journey beyond. A testament to childhood wonder and the boundless sky.',
     },
-
-
     {
         id: 'sunflower-haze',
         title: 'Sunflower Haze',
         category: 'Gouache Print',
         image: '/sunflower-haze.jpg',
-        price: 10500,
+        price: 1400,
         description: 'An endless field of sunflowers basking in the golden hour warmth. Radiates positivity and summer joy.',
     },
     {
@@ -89,7 +87,7 @@ export const products = [
         title: 'Rural Cottage',
         category: 'Original Gouache',
         image: '/rural-cottage.jpg',
-        price: 19500,
+        price: 2700,
         description: 'A quaint white cottage with a thatched roof, nestled in the quiet countryside. A classic scene of rustic charm.',
     },
     {
@@ -97,7 +95,7 @@ export const products = [
         title: 'Nature\'s Trail',
         category: 'Original Gouache',
         image: '/nature-trail.jpg',
-        price: 21000,
+        price: 2800,
         description: 'A vibrant path winding through a sunlit forest, inviting the viewer to explore the beauty of the wild.',
     },
     {
@@ -105,7 +103,7 @@ export const products = [
         title: 'Quiet Afternoon',
         category: 'Gouache Print',
         image: '/quiet-afternoon.jpg',
-        price: 13500,
+        price: 1600,
         description: 'A peaceful moment captured by the window, overlooking a serene lake and castle. Perfect for a reading nook.',
     },
     {
@@ -113,7 +111,7 @@ export const products = [
         title: 'Winter Ascent',
         category: 'Original Gouache',
         image: '/winter-ascent.jpg',
-        price: 23000,
+        price: 3000,
         description: 'Bright yellow gondolas climbing into the snowy blue sky. A dynamic and cheerful winter scene.',
     },
     {
@@ -121,7 +119,7 @@ export const products = [
         title: 'Sunset Window',
         category: 'Original Gouache',
         image: '/sunset-window.jpg',
-        price: 18500,
+        price: 2600,
         description: 'A charming blue wall window scene adorned with flowers, set against a warm sunset. Evokes a sense of home and nostalgia.',
     },
     {
@@ -129,7 +127,7 @@ export const products = [
         title: 'Royal Betta',
         category: 'Original Gouache',
         image: '/royal-betta.jpg',
-        price: 25000,
+        price: 3200,
         description: 'A striking portrait of a Betta fish with flowing, iridescent fins against a stark black background. A masterpiece of fluid motion.',
     },
     {
@@ -137,7 +135,7 @@ export const products = [
         title: 'Quaint Street',
         category: 'Gouache Print',
         image: '/quaint-street.jpg',
-        price: 12500,
+        price: 1550,
         description: 'A picturesque cobblestone street lined with white buildings and a vibrant red flowering tree. A Mediterranean dream.',
     },
     {
@@ -145,7 +143,7 @@ export const products = [
         title: 'Pink Peony',
         category: 'Original Gouache',
         image: '/pink-peony.jpg',
-        price: 20000,
+        price: 2750,
         description: 'A delicate Pink Peony in full bloom, highlighted against a dark canvas. Captures the softness and intricacy of nature.',
     },
     {
@@ -153,7 +151,7 @@ export const products = [
         title: 'Golden Gate View',
         category: 'Original Gouache',
         image: '/golden-gate.jpg',
-        price: 24000,
+        price: 3100,
         description: 'The iconic bridge spanning vibrant teal waters against a soft sunset sky. A bold architectural statement.',
     },
     {
@@ -161,7 +159,7 @@ export const products = [
         title: 'Autumn Comfort',
         category: 'Gouache Print',
         image: '/autumn-reading.jpg',
-        price: 11000,
+        price: 1450,
         description: 'Books, pumpkins, and a warm candle by the window. The ultimate cozy autumn aesthetic captured in gouache.',
     },
     {
@@ -169,7 +167,7 @@ export const products = [
         title: 'Laughing Kookaburra',
         category: 'Original Gouache',
         image: '/kookaburra.jpg',
-        price: 19000,
+        price: 2650,
         description: 'A highly detailed portrait of the Kookaburra, showcasing its unique plumage and character.',
     },
     {
@@ -177,7 +175,7 @@ export const products = [
         title: 'Serene Lake Sunset',
         category: 'Original Gouache',
         image: '/lake-sunset.jpg',
-        price: 22500,
+        price: 2950,
         description: 'A peaceful boat ride on a lake reflecting the golden fire of the setting sun. A landscape of pure tranquility.',
     },
     {
@@ -185,7 +183,7 @@ export const products = [
         title: 'Coastal Beacon',
         category: 'Original Gouache',
         image: '/lighthouse.jpg',
-        price: 21500,
+        price: 2850,
         description: 'A sturdy lighthouse standing against a dramatic orange and purple sunset sky. A symbol of guidance and strength.',
     },
     {
@@ -193,7 +191,7 @@ export const products = [
         title: 'The Artistic Eye',
         category: 'Original Gouache',
         image: '/artistic-eye-gouache.png',
-        price: 27000,
+        price: 3400,
         description: 'A mesmerizing, abstract study of an eye rendered in vibrant, textured gouache strokes. A look into the soul of art.',
     },
     {
@@ -201,7 +199,7 @@ export const products = [
         title: 'Van Life Sunset',
         category: 'Gouache Print',
         image: '/van-sunset-gouache.png',
-        price: 14500,
+        price: 1700,
         description: 'A silhouette of freedom: enjoying music atop a van against a spectacular painted sky. The ultimate bohemian dream.',
     },
 
