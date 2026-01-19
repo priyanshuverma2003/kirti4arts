@@ -26,7 +26,7 @@ export default function AboutPage() {
                     </div>
                 </div>
                 <div className={styles.imageColumn}>
-                    <img src="/artist-new.jpg" alt="Kirti Verma" className={styles.artistImage} />
+                    <img src="/artist.jpg" alt="Kirti Verma" className={styles.artistImage} />
                 </div>
             </div>
         </div>
