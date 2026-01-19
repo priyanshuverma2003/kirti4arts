@@ -348,13 +348,13 @@
     }
 
     .card {
-        border: 1px solid rgba(212, 175, 55, 0.2);
+        border: none;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        border-radius: 10px;
+        border-radius: 0;
     }
 
     .cardInfo {
-        padding: 1rem 1rem;
+        padding: 0.8rem 0.8rem;
     }
 
     .cardInfo h3 {
