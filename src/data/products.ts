@@ -17,14 +17,6 @@ export const products = [
         description: 'A blend of textures and colors creating an ethereal abstract experience. A journey through imagination.',
     },
 
-    {
-        id: 'moon-boy',
-        title: 'Moon Boy',
-        category: 'Original Print',
-        image: '/moon-boy.png',
-        price: 4500,
-        description: 'High quality print of the original Moon Boy artwork. Whimsical and charming character study.',
-    },
 
     {
         id: 'golden-oriole',
