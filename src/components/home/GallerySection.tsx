@@ -76,7 +76,6 @@ function ArtworkCard({ product, index }: { product: any; index: number }) {
                         <h3>{product.title}</h3>
                         <div className={styles.cardFooter}>
                             <span className={styles.price}>₹{product.price.toLocaleString()}</span>
-                            {productIsPrint && <span className={styles.saveLabel}>-50% Off</span>}
                         </div>
                     </div>
                 </motion.div>
