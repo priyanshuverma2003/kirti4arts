@@ -15,26 +15,27 @@ export default function ContactPage() {
         const formData = new FormData(e.currentTarget);
         const data = Object.fromEntries(formData.entries());
 
-        // Add Web3Forms config
-        // NOTE: User needs to replace YOUR_ACCESS_KEY_HERE with their actual key from web3forms.com
-        data.access_key = '00000000-0000-0000-0000-000000000000'; // Placeholder
-        data.subject = `🎨 New Inquiry from ${data.name} - Kirti4Arts`;
-        data.from_name = 'Kirti4Arts Gallery';
-
+        // FormSubmit.co config
+        // Using AJAX to keep the user on the page
         try {
-            const response = await fetch('https://api.web3forms.com/submit', {
+            const response = await fetch('https://formsubmit.co/ajax/kirtiverma141@gmail.com', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify({
+                    ...data,
+                    _subject: `New Inquiry from ${data.name} - Kirti4Arts`, // Custom subject
+                    _template: 'table' // Makes the email look nicer
+                })
             });
 
             const result = await response.json();
-            if (result.success) {
+            if (response.ok) {
                 setStatus('success');
             } else {
+                console.error('FormSubmit error:', result);
                 setStatus('error');
             }
         } catch (error) {
@@ -58,7 +59,7 @@ export default function ContactPage() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    Interested in a commission or have a question?
+                    Interested in a commission or have a query?
                 </motion.p>
             </div>
 
