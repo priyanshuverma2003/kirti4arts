@@ -8,14 +8,6 @@ export const products = [
         price: 8000,
         description: 'An expressive charcoal portrait focusing on the depth of the human gaze. Captures raw emotion in black and white.',
     },
-    {
-        id: 'ethereal',
-        title: 'Ethereal',
-        category: 'Mixed Media',
-        image: '/ethereal.jpg',
-        price: 8000,
-        description: 'A blend of textures and colors creating an ethereal abstract experience. A journey through imagination.',
-    },
 
 
     {
