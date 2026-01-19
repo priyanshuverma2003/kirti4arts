@@ -94,6 +94,10 @@
     width: 100%;
 }
 
+.mobileBackButton {
+    display: none;
+}
+
 .actions {
     display: flex;
     align-items: center;
@@ -383,6 +387,30 @@
     }
 
     /* Mobile Menu - Full Screen Overlay */
+    .mobileBackButton {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        cursor: pointer;
+        align-self: flex-start;
+        margin-bottom: 1rem;
+        padding: 0.5rem 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .mobileBackButton:hover {
+        transform: translateX(-5px);
+        opacity: 0.8;
+    }
+
     .navLinks {
         display: flex;
         position: fixed;

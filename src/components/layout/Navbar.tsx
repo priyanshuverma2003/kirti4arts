@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { ShoppingBag, Palette, Menu, X, Search } from 'lucide-react';
+import { ShoppingBag, Palette, Menu, X, Search, ChevronLeft } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { products } from '@/data/products';
 import styles from './Navbar.module.css';
@@ -40,6 +40,12 @@ export default function Navbar() {
                 </Link>
 
                 <div className={`${styles.navLinks} ${mobileMenuOpen ? styles.active : ''}`}>
+                    <button
+                        className={styles.mobileBackButton}
+                        onClick={() => setMobileMenuOpen(false)}
+                    >
+                        <ChevronLeft size={24} /> Back
+                    </button>
                     <Link href="/" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Home</Link>
                     <Link href="/about" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>About</Link>
                     <Link href="/gallery" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Gallery</Link>
