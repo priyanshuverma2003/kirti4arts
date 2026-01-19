@@ -68,8 +68,31 @@ export default function CartPage() {
                     <button
                         className={styles.checkoutBtn}
                         onClick={() => {
-                            const message = `Hi Kirti, I'd like to order the following art:\n\n${cart.map(item => `- ${item.title} (${item.quantity}x) - ₹${item.price.toLocaleString()}`).join('\n')}\n\nTotal: ₹${cartTotal.toLocaleString()}\n\nPlease let me know the next steps!`;
-                            window.open(`https://wa.me/919999999999?text=${encodeURIComponent(message)}`, '_blank');
+                            // Admin WhatsApp number (update this with actual number)
+                            const ADMIN_WHATSAPP = '919999999999'; // Format: country code + number (no spaces or +)
+
+                            // Build detailed message with professional formatting
+                            let message = `🎨 *New Order Inquiry - Kirti4Arts*\n\n`;
+                            message += `Hello! I'm interested in ordering the following artworks:\n\n`;
+                            message += `━━━━━━━━━━━━━━━━━━━━\n`;
+                            message += `📦 *Order Details:*\n\n`;
+
+                            // Add each cart item with detailed information
+                            cart.forEach((item, index) => {
+                                const itemSubtotal = item.price * item.quantity;
+                                message += `${index + 1}. *${item.title}*\n`;
+                                message += `   • Quantity: ${item.quantity}\n`;
+                                message += `   • Price: ₹${item.price.toLocaleString()} each\n`;
+                                message += `   • Subtotal: ₹${itemSubtotal.toLocaleString()}\n\n`;
+                            });
+
+                            message += `━━━━━━━━━━━━━━━━━━━━\n`;
+                            message += `💰 *Total Amount: ₹${cartTotal.toLocaleString()}*\n\n`;
+                            message += `Please confirm availability and share the next steps for payment and delivery.\n\n`;
+                            message += `Thank you! 🙏`;
+
+                            // Open WhatsApp with the formatted message
+                            window.open(`https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(message)}`, '_blank');
                         }}
                     >
                         Order via WhatsApp
