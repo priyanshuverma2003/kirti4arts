@@ -521,8 +521,8 @@
 
 .stepNumber {
     font-size: 3rem;
-    font-weight: 700;
-    color: rgba(212, 175, 55, 0.1);
+    font-weight: 900;
+    color: rgba(212, 175, 55, 0.2);
     margin-bottom: 1rem;
     line-height: 1;
 }
