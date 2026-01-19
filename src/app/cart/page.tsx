@@ -69,7 +69,7 @@ export default function CartPage() {
                         className={styles.checkoutBtn}
                         onClick={() => {
                             // Admin WhatsApp number (update this with actual number)
-                            const ADMIN_WHATSAPP = '919999999999'; // Format: country code + number (no spaces or +)
+                            const ADMIN_WHATSAPP = '918810426680'; // Format: country code + number (no spaces or +)
 
                             // Build detailed message with professional formatting
                             let message = `🎨 *New Order Inquiry - Kirti4Arts*\n\n`;
