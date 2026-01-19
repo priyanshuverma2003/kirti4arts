@@ -21,7 +21,8 @@ const slides = [
         image: '/silent-gaze.png',
         title: 'Silent Gaze',
         subtitle: 'Contemporary Portrait',
-        position: 'center 20%'
+        position: 'center 20%',
+        mobilePosition: 'center top'
     },
     {
         id: 3,
@@ -69,7 +70,9 @@ export default function HeroSlideshow() {
                     transition={{ duration: 2.5, ease: "linear" }}
                     style={{
                         backgroundImage: `url(${slides[current].image})`,
-                        backgroundPosition: (slides[current] as any).position || 'center'
+                        backgroundPosition: (typeof window !== 'undefined' && window.innerWidth <= 768 && (slides[current] as any).mobilePosition)
+                            ? (slides[current] as any).mobilePosition
+                            : (slides[current] as any).position || 'center'
                     }}
                 >
                     <div className={styles.overlay} />
