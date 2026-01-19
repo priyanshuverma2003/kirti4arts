@@ -15,7 +15,7 @@ export default function AboutSection() {
                 <div className={styles.imageWrapper}>
                     <div className={styles.imageContainer}>
                         {/* Using a standard img tag for external check or configured Next Image */}
-                        <img src="/artist.jpg" alt="Kirti Verma" />
+                        <img src="/MYPIC.jpg" alt="Kirti Verma" />
                     </div>
                 </div>
 
