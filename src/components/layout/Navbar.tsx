@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { ShoppingBag, Palette, Menu, X, Search, ChevronLeft } from 'lucide-react';
+import { ShoppingBag, Palette, Menu, X, Search } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '@/context/CartContext';
 import { products } from '@/data/products';
 import styles from './Navbar.module.css';
@@ -39,18 +40,30 @@ export default function Navbar() {
                     </h1>
                 </Link>
 
-                <div className={`${styles.navLinks} ${mobileMenuOpen ? styles.active : ''}`}>
-                    <button
-                        className={styles.mobileBackButton}
-                        onClick={() => setMobileMenuOpen(false)}
-                    >
-                        <ChevronLeft size={24} /> Back
-                    </button>
-                    <Link href="/" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Home</Link>
-                    <Link href="/about" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>About</Link>
-                    <Link href="/gallery" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Gallery</Link>
-                    <Link href="/contact" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Contact</Link>
-                </div>
+                <AnimatePresence>
+                    {(mobileMenuOpen || typeof window !== 'undefined' && window.innerWidth > 768) && (
+                        <motion.div
+                            className={`${styles.navLinks} ${mobileMenuOpen ? styles.active : ''}`}
+                            initial={typeof window !== 'undefined' && window.innerWidth <= 768 ? { x: '100%' } : {}}
+                            animate={typeof window !== 'undefined' && window.innerWidth <= 768 ? { x: mobileMenuOpen ? 0 : '100%' } : {}}
+                            exit={typeof window !== 'undefined' && window.innerWidth <= 768 ? { x: '100%' } : {}}
+                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                            drag={typeof window !== 'undefined' && window.innerWidth <= 768 ? "x" : false}
+                            dragConstraints={{ left: 0, right: 300 }}
+                            dragElastic={0.05}
+                            onDragEnd={(_, info) => {
+                                if (info.offset.x > 100) {
+                                    setMobileMenuOpen(false);
+                                }
+                            }}
+                        >
+                            <Link href="/" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                            <Link href="/about" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>About</Link>
+                            <Link href="/gallery" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Gallery</Link>
+                            <Link href="/contact" className={styles.navLink} onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
 
                 <div className={styles.actions}>
                     <div className={styles.searchContainer}>
