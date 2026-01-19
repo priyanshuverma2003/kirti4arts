@@ -27,18 +27,39 @@ export default function ContactPage() {
                 </div>
 
                 <div className={styles.formContainer}>
-                    <form className={styles.form}>
+                    <form
+                        className={styles.form}
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            const formData = new FormData(e.currentTarget);
+                            const name = formData.get('name');
+                            const phone = formData.get('phone');
+                            const email = formData.get('email');
+                            const message = formData.get('message');
+
+                            const adminEmail = 'kirtiverma141@gmail.com';
+                            const subject = `🎨 New Inquiry from ${name} - Kirti4Arts`;
+                            const body = `Hello Kirti,\n\nYou have a new message from your website contact form:\n\n` +
+                                `👤 Name: ${name}\n` +
+                                `📞 Phone: ${phone}\n` +
+                                `📧 Email: ${email}\n\n` +
+                                `✉️ Message:\n${message}\n\n` +
+                                `Regards,\nKirti4Arts Website`;
+
+                            window.location.href = `mailto:${adminEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                        }}
+                    >
                         <div className={styles.formGroup}>
-                            <input type="text" placeholder="Your Name" required />
+                            <input name="name" type="text" placeholder="Your Name" required />
                         </div>
                         <div className={styles.formGroup}>
-                            <input type="tel" placeholder="Your Phone Number" required />
+                            <input name="phone" type="tel" placeholder="Your Phone Number" required />
                         </div>
                         <div className={styles.formGroup}>
-                            <input type="email" placeholder="Your Email" required />
+                            <input name="email" type="email" placeholder="Your Email" required />
                         </div>
                         <div className={styles.formGroup}>
-                            <textarea placeholder="Your Message" required></textarea>
+                            <textarea name="message" placeholder="Your Message" required></textarea>
                         </div>
                         <button type="submit" className={styles.submitBtn}>Send Message</button>
                     </form>
