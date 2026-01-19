@@ -25,9 +25,9 @@ const slides = [
     },
     {
         id: 3,
-        image: '/van-sunset-gouache.png',
-        title: 'Van Life Sunset',
-        subtitle: 'Bohemian Dreams',
+        image: '/sunflower-haze.jpg',
+        title: 'Sunflower Haze',
+        subtitle: 'Summer Radiance',
         position: 'center'
     },
     {
