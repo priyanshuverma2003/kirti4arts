@@ -289,11 +289,12 @@
 
 @media (max-width: 768px) {
     .gallery {
-        padding: 4rem 4%;
+        padding: 4rem 0.5%;
     }
 
     .header {
         margin-bottom: 2rem;
+        padding: 0 1rem;
     }
 
     .header h2 {
@@ -351,7 +352,7 @@
     }
 
     .cardInfo {
-        padding: 2.5rem 1.5rem;
+        padding: 1.5rem 1rem;
     }
 
     .cardInfo h3 {
