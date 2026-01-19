@@ -336,7 +336,7 @@
         display: flex;
         flex-direction: column;
         gap: 2.5rem;
-        padding: 2rem 1rem;
+        padding: 2rem 0;
         column-count: auto;
         /* Reset columns */
     }
@@ -348,14 +348,13 @@
     }
 
     .card {
-        border: 1px solid rgba(212, 175, 55, 0.15);
+        border: none;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        border-radius: 12px;
-        overflow: hidden;
+        border-radius: 0;
     }
 
     .cardInfo {
-        padding: 1.2rem 1rem;
+        padding: 0.8rem 1rem;
     }
 
     .cardInfo h3 {
