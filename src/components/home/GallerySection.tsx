@@ -8,6 +8,9 @@ import { Search } from 'lucide-react';
 import { products } from '@/data/products';
 import styles from './GallerySection.module.css';
 
+// Helper to check if a product is a print
+const isPrint = (product: any) => product.id.endsWith('-print') || product.category.toLowerCase().includes('print');
+
 function ArtworkCard({ product, index }: { product: any; index: number }) {
     const cardRef = useRef<HTMLDivElement>(null);
     const x = useMotionValue(0);
@@ -37,6 +40,8 @@ function ArtworkCard({ product, index }: { product: any; index: number }) {
         y.set(0);
     };
 
+    const productIsPrint = isPrint(product);
+
     return (
         <motion.div
             layout
@@ -59,6 +64,9 @@ function ArtworkCard({ product, index }: { product: any; index: number }) {
                 >
                     <div className={styles.imageWrapper} style={{ transform: "translateZ(30px)" }}>
                         <img src={product.image} alt={product.title} />
+                        <div className={styles.badge}>
+                            {productIsPrint ? 'Print Edition' : 'Original Artwork'}
+                        </div>
                         <div className={styles.overlay}>
                             <span className={styles.viewLabel}>View Masterpiece</span>
                         </div>
@@ -68,6 +76,7 @@ function ArtworkCard({ product, index }: { product: any; index: number }) {
                         <h3>{product.title}</h3>
                         <div className={styles.cardFooter}>
                             <span className={styles.price}>₹{product.price.toLocaleString()}</span>
+                            {productIsPrint && <span className={styles.saveLabel}>-50% Off</span>}
                         </div>
                     </div>
                 </motion.div>
@@ -97,11 +106,38 @@ function GalleryContent({ title, subtitle }: GalleryProps) {
         }
     }, [searchParams]);
 
-    const filteredProducts = products.filter(p => {
-        const matchesCategory = filter === 'All' || p.category.includes(filter);
+    // Algorithmic generation of products (Originals + Prints)
+    const allProducts = products.flatMap(p => {
+        // If it's already a print in data, return as is
+        if (isPrint(p)) return [p];
+
+        // For originals, create a print version
+        const printVersion = {
+            ...p,
+            id: `${p.id}-print`,
+            title: `${p.title} (Print)`,
+            category: `${p.category} Print`,
+            price: Math.floor(p.price / 2), // Algorithm: Price divided by 2
+            description: `High-quality museum-grade print of the original masterpiece '${p.title}'. ${p.description}`
+        };
+
+        return [p, printVersion];
+    });
+
+    const filteredProducts = allProducts.filter(p => {
+        // Search filter
         const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
             p.category.toLowerCase().includes(searchQuery.toLowerCase());
-        return matchesCategory && matchesSearch;
+
+        if (!matchesSearch) return false;
+
+        // Category filter
+        if (filter === 'All') return true;
+        if (filter === 'Originals') return !isPrint(p);
+        if (filter === 'Prints') return isPrint(p);
+
+        // Specific category filters
+        return p.category.includes(filter);
     });
 
     return (

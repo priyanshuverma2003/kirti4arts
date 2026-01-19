@@ -189,6 +189,34 @@
 
 /* Removed Light Sweep Effect */
 
+.badge {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    background: rgba(15, 15, 25, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 4px;
+    color: var(--primary-color);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.saveLabel {
+    font-size: 0.8rem;
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-left: 0.8rem;
+    font-weight: 600;
+}
+
 .overlay {
     position: absolute;
     inset: 0;

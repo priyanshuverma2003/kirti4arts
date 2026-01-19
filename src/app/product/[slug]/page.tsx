@@ -9,7 +9,26 @@ import styles from './page.module.css';
 export default function ProductPage() {
     const { slug } = useParams();
     const { addToCart } = useCart();
-    const product = products.find((p) => p.id === slug);
+
+    // Logic to handle dynamic print versions
+    const isPrintSlug = typeof slug === 'string' && slug.endsWith('-print');
+    const originalSlug = isPrintSlug ? (slug as string).replace('-print', '') : slug;
+
+    const originalProduct = products.find((p) => p.id === originalSlug);
+
+    let product = originalProduct;
+
+    if (originalProduct && isPrintSlug) {
+        // Create the print version on the fly
+        product = {
+            ...originalProduct,
+            id: slug as string,
+            title: `${originalProduct.title} (Print)`,
+            category: `${originalProduct.category} Print`,
+            price: Math.floor(originalProduct.price / 2),
+            description: `High-quality museum-grade print of the original masterpiece '${originalProduct.title}'. ${originalProduct.description}`
+        };
+    }
 
     if (!product) {
         return (
