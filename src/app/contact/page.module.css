@@ -116,6 +116,16 @@
     cursor: pointer;
     transition: 0.3s;
     letter-spacing: 1px;
+    display: flex;
+    /* Added flex */
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    white-space: nowrap;
+    /* Prevent wrapping */
+    gap: 0.8rem;
+    /* Use gap for spacing between icon and text */
 }
 
 .submitBtn:hover {
@@ -201,9 +211,7 @@
     }
 }
 
-.btnIcon {
-    margin-right: 0.8rem;
-}
+
 
 .errorMsg {
     color: #ff4d4d;

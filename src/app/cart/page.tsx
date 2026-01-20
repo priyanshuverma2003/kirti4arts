@@ -33,8 +33,9 @@ export default function CartPage() {
 
                             <div className={styles.itemDetails}>
                                 <h3>{item.title}</h3>
-                                <p className={styles.price}>₹{item.price.toLocaleString()}</p>
                             </div>
+
+                            <p className={styles.price}>₹{item.price.toLocaleString()}</p>
 
                             <div className={styles.controls}>
                                 <div className={styles.quantity}>
