@@ -27,6 +27,9 @@ export default function Footer() {
             </div>
             <div className={styles.bottom}>
                 <p>&copy; {new Date().getFullYear()} Kirti4Arts. All Rights Reserved.</p>
+                <p style={{ fontSize: '0.9rem', marginTop: '0.5rem', opacity: 0.8, letterSpacing: '0.05em' }}>
+                    Website created by <a href="https://instagram.com/priyanshu_v_21" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary-color)', textDecoration: 'none', fontWeight: 500 }}>Priyanshu Verma</a>
+                </p>
             </div>
         </footer>
     );
