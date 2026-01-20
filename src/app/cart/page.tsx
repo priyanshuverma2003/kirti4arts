@@ -57,8 +57,12 @@ export default function CartPage() {
                         <span>₹{cartTotal.toLocaleString()}</span>
                     </div>
                     <div className={styles.summaryRow}>
-                        <span>Shipping</span>
-                        <span>Calculated during order</span>
+                        <span>Shipping Location</span>
+                        <span>India</span>
+                    </div>
+                    <div className={styles.summaryRow}>
+                        <span>Shipping Cost</span>
+                        <span>Free</span>
                     </div>
                     <div className={`${styles.summaryRow} ${styles.total}`}>
                         <span>Total</span>

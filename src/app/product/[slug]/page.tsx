@@ -82,7 +82,7 @@ export default function ProductPage() {
                     </button>
 
                     <div className={styles.details}>
-                        <p><strong>Dimensions:</strong> 12 x 16 inches (Approx)</p>
+                        {product.dimensions && <p><strong>Dimensions:</strong> {product.dimensions}</p>}
                         <p><strong>Medium:</strong> {product.category}</p>
                         <p><strong>Shipping:</strong> Worldwide</p>
                     </div>
