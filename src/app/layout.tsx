@@ -5,7 +5,6 @@ import "./mobile-fix.css";
 import { CartProvider } from "@/context/CartContext";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import CustomCursor from "@/components/ui/CustomCursor";
 
 // Configure Fonts
 const cormorant = Cormorant_Garamond({
@@ -41,7 +40,6 @@ export default function RootLayout({
     <html lang="en" className={`${cormorant.variable} ${montserrat.variable}`}>
       <body>
         <CartProvider>
-          <CustomCursor />
           <Navbar />
           <main>{children}</main>
           <Footer />

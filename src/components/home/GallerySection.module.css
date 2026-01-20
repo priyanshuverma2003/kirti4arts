@@ -184,7 +184,8 @@
 }
 
 .cardWrapper:hover .imageWrapper img {
-    transform: scale(1.1);
+    filter: blur(5px);
+    transform: scale(1);
 }
 
 /* Removed Light Sweep Effect */
