@@ -148,7 +148,7 @@ export const products = [
     },
     {
         id: 'laughing-kookaburra',
-        title: 'Laughing Kookaburra',
+        title: 'Kookaburra',
         category: 'Original Gouache',
         image: '/kookaburra.jpg',
         price: 5300,
