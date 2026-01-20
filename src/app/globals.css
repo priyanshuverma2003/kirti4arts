@@ -51,16 +51,7 @@ html {
   overflow-x: hidden;
 }
 
-/* Custom cursor only on desktop */
-@media (min-width: 769px) {
-  * {
-    cursor: none;
-  }
-
-  a {
-    cursor: none;
-  }
-}
+/* Custom cursor styles removed */
 
 body {
   background-color: var(--bg-color);
