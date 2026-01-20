@@ -62,7 +62,7 @@ export default function CartPage() {
                     </div>
                     <div className={styles.summaryRow}>
                         <span>Shipping Cost</span>
-                        <span>Free</span>
+                        <span>Calculated at checkout</span>
                     </div>
                     <div className={`${styles.summaryRow} ${styles.total}`}>
                         <span>Total</span>
